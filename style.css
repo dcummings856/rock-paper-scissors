@@ -1,0 +1,24 @@
+html {
+    text-align: center;
+    font-family: 'Lucida Sans', sans-serif;
+    background-image: linear-gradient(to right, rgb(62, 133, 62), rgb(121, 199, 57))
+}
+
+.title {
+    font-size: 36px;
+    color: rgb(22, 66, 61);
+}
+
+.play {
+    font-size: 24px;
+}
+
+.play span {
+    cursor: pointer;
+    padding: 0px 15px;
+}
+
+.results {
+    font-size: 28px;
+    padding: 20px;
+}

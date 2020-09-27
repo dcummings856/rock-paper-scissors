@@ -1,5 +1,11 @@
-const computerPlay = (choice) => {
-    choice = Math.floor(Math.random() * 3);
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
+let results_p = document.getElementById('results');
+
+
+const computerPlay = () => {
+    const choice = Math.floor(Math.random() * 3);
     if (choice === 0) {
         return 'rock';
     } else if (choice === 1) {
@@ -9,21 +15,40 @@ const computerPlay = (choice) => {
     }
 };
 
-const playRound = (playerChoice, computerChoice) => {
-    computerChoice = computerPlay();
+
+const playRound = (playerChoice) => {
+    const computerChoice = computerPlay();
     if (playerChoice === 'rock' && computerChoice === 'paper') {
-        console.log('You lose!');
-    } else if (playerChoice === 'paper' && computerChoice === 'scissor') {
-        console.log('You lose!');
+        return results_p.innerHTML = 'You Lose!';
+    } else if (playerChoice === 'paper' && computerChoice === 'scissors') {
+        return results_p.innerHTML = 'You Lose!';
     } else if (playerChoice === 'scissors' && computerChoice === 'rock') {
-        console.log('You lose!');
+        return results_p.innerHTML = 'You Lose!';
     } else if (playerChoice === 'rock' && computerChoice === 'scissors') {
-        console.log('You win!');
+        return results_p.innerHTML = 'You win!';
     } else if (playerChoice === 'paper' && computerChoice === 'rock') {
-        console.log('You win!');
+        return results_p.innerHTML = 'You win!';
     } else if (playerChoice === 'scissors' && computerChoice === 'paper') {
-        console.log('You win!');
+        return results_p.innerHTML = 'You win!';
     } else {
-        console.log('It\'s a draw.');
+        return results_p.innerHTML = 'It\'s a Draw.';
     }
 };
+
+game = () => {
+
+rock.addEventListener('click', () => {
+    playRound('rock');
+});
+
+paper.addEventListener('click', () => {
+    playRound('paper');
+});
+
+scissors.addEventListener('click', () => { 
+    playRound('scissors')
+});
+
+};
+
+game();
